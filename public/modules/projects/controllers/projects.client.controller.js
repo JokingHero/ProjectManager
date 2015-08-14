@@ -7,25 +7,27 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Create new Project
 		$scope.create = function() {
-			// Create new Project object
-			var project = new Projects ({
-				name: this.name
-			});
+			if(!$scope.projectForm.$invalid){
+				// Create new Project object
+				var project = new Projects ({
+					name: this.name
+				});
 
-			// Redirect after save
-			project.$save(function(response) {
-				$location.path('projects/' + response._id);
+				// Redirect after save
+				project.$save(function(response) {
+					$location.path('projects/' + response._id);
 
-				// Clear form fields
-				$scope.name = '';
-			}, function(errorResponse) {
-				$scope.error = errorResponse.data.message;
-			});
+					// Clear form fields
+					$scope.name = '';
+				}, function(errorResponse) {
+					$scope.error = errorResponse.data.message;
+				});
+			}
 		};
 
 		// Remove existing Project
 		$scope.remove = function(project) {
-			if ( project ) { 
+			if ( project ) {
 				project.$remove();
 
 				for (var i in $scope.projects) {
@@ -58,7 +60,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		// Find existing Project
 		$scope.findOne = function() {
-			$scope.project = Projects.get({ 
+			$scope.project = Projects.get({
 				projectId: $stateParams.projectId
 			});
 		};

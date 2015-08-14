@@ -1,21 +1,29 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1 data-ng-bind="project.name"></h1>
-	</div>
-	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == project.user._id))">
-		<a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">
-			Posted on
-			<span data-ng-bind="project.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="project.user.displayName"></span>
-		</em>
-	</small>
+    <div class="page-header">
+        <h2 class="break" data-ng-bind="project.name"></h2>
+    </div>
+    <div class="page-header" style="margin-top: 0;">
+        <h3> Project description: </h3>
+        <p class="break" data-ng-bind="project.description || 'No project description.'"></p>
+    </div>
+    <div class="page-header" style="margin-top: 0;">
+        <h3> Project documentation: </h3>
+        <div data-ng-bind="project.documentation"></div>
+    </div>
+    <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == project.user._id))">
+        <a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <small>
+        <em class="text-muted">
+            Posted on
+            <span data-ng-bind="project.created | date:'mediumDate'"></span>
+            by
+            <span data-ng-bind="project.user.displayName"></span>
+        </em>
+    </small>
 </section>
