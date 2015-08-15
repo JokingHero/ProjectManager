@@ -26,5 +26,9 @@
             scope.$digest();
             expect(scope.parse).toEqual('something new');
         });
+
+        it('should have replaced directive element', function() {
+            expect(element.find('external-links').length).toEqual(0);
+        });
     });
 }());
