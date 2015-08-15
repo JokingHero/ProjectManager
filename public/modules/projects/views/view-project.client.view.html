@@ -4,11 +4,11 @@
     </div>
     <div class="page-header" style="margin-top: 0;">
         <h3> Project description: </h3>
-        <p class="break" data-ng-bind="project.description || 'No project description.'"></p>
+        <p class="break" data-ng-bind="project.description || 'No project description.'" style="text-align: justify;"></p>
     </div>
     <div class="page-header" style="margin-top: 0;">
         <h3> Project documentation: </h3>
-        <div data-ng-bind="project.documentation"></div>
+        <external-links parse="project.documentation"></external-links>
     </div>
     <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == project.user._id))">
         <a class="btn btn-primary" href="/#!/projects/{{project._id}}/edit">

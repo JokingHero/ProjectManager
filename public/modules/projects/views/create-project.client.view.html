@@ -13,20 +13,21 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="description">Description</label>
-                    <input id="description" type="text" name="description" class="form-control" ng-model="description">
-                </div>
-                <div class="form-group" ng-class="{ 'has-error' : projectForm.name.$invalid && !projectForm.name.$pristine }">
-                    <label class="control-label" for="name">Name</label>
-                    <input id="name" type="text" name="name" class="form-control" ng-model="name" ng-minlength="40" required>
-                    <p ng-show="projectForm.name.$error.minlength" class="help-block">Project name is too short. Must be over 40 charcaters.</p>
-                    <p ng-show="projectForm.name.$invalid && !projectForm.name.$error.minlength" class="help-block">Project name is required.</p>
+                    <textarea ng-model="description" id="description" class="description">
+                    </textarea>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <label class="control-label" for="documentation">Documentation</label>
+                    <text-angular id="documentation" ng-model="documentation" ta-toolbar="toolbar">
+                    </text-angular>
+                </div>
+                <div class="form-group">
+                    <input type="submit" ng-disabled="projectForm.$invalid" class="btn btn-default">
                 </div>
                 <div data-ng-show="error" class="text-danger">
                     <strong data-ng-bind="error"></strong>
                 </div>
+
             </fieldset>
         </form>
     </div>

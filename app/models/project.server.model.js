@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /**
- * A Validation function for project name length
+ * Validation function for project name length
  */
 var validateProjectName = function(name) {
     return name && name.length > 40;

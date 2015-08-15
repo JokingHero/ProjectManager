@@ -32,6 +32,9 @@ module.exports = {
             css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/angular-bootstrap-colorpicker/css/colorpicker.css',
+        'public/lib/font-awesome/css/font-awesome.css',
+        'public/lib/textAngular/dist/textAngular.css'
 			],
             js: [
 				'public/lib/angular/angular.js',
@@ -39,10 +42,13 @@ module.exports = {
 				'public/lib/angular-cookies/angular-cookies.js',
 				'public/lib/angular-animate/angular-animate.js',
 				'public/lib/angular-touch/angular-touch.js',
-				'public/lib/angular-sanitize/angular-sanitize.js',
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+        'public/lib/textAngular/dist/textAngular-rangy.min.js',
+        'public/lib/textAngular/dist/textAngular-sanitize.min.js',
+        'public/lib/textAngular/dist/textAngular.min.js',
+        'public/lib/Autolinker.js/dist/Autolinker.js'
 			]
         },
         css: [

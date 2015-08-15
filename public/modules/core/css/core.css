@@ -16,3 +16,7 @@
 .break {
     word-wrap: break-word;
 }
+.btn-toolbar > .btn, .btn-toolbar > .btn-group, .btn-toolbar > .input-group {
+    margin-left: 5px;
+    margin-top: 5px;
+}

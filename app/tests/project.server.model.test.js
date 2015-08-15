@@ -29,7 +29,7 @@ describe('Project Model Unit Tests:', function() {
 
         user.save(function() {
             project = new Project({
-                name: 'Project Name',
+                name: 'Project Name is longer than 40 characters so we can save',
                 user: user
             });
 
@@ -47,6 +47,15 @@ describe('Project Model Unit Tests:', function() {
 
         it('should be able to show an error when try to save without name', function(done) {
             project.name = '';
+
+            return project.save(function(err) {
+                should.exist(err);
+                done();
+            });
+        });
+
+        it('should be able to show an error when try to save with name shorter than 40 characters', function(done) {
+            project.name = 'Only 13 chars';
 
             return project.save(function(err) {
                 should.exist(err);

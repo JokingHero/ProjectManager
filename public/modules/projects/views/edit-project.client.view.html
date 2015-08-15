@@ -3,18 +3,28 @@
         <h1>Edit Project</h1>
     </div>
     <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+        <form name="projectUpdateForm" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
                     <label class="control-label" for="name">Name</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="project.name" id="name" class="form-control" placeholder="Name" required>
-                        <input type="text" data-ng-model="project.description" id="description" class="form-control" placeholder="Description" required>
-                        <input type="text" data-ng-model="project.documentation" id="documentation" class="form-control" placeholder="Documentation">
+                        <input type="text" id="name" data-ng-model="project.name" name="name"  class="form-control" ng-minlength="40" required>
+                        <p ng-show="projectUpdateForm.name.$error.minlength" class="help-block">Project name is too short. Must be over 40 charcaters.</p>
+                        <p ng-show="projectUpdateForm.name.$invalid && !projectUpdateForm.name.$error.minlength" class="help-block">Project name is required.</p>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Update" class="btn btn-default">
+                    <label class="control-label" for="description">Description</label>
+                    <textarea id="description" data-ng-model="project.description" class="description">
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="documentation">Documentation</label>
+                    <text-angular id="documentation" ng-model="project.documentation" ta-toolbar="toolbar">
+                    </text-angular>
+                </div>
+                <div class="form-group">
+                    <input type="submit" ng-disabled="projectUpdateForm.$invalid" value="Update" class="btn btn-default">
                 </div>
                 <div data-ng-show="error" class="text-danger">
                     <strong data-ng-bind="error"></strong>
