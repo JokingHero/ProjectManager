@@ -10,23 +10,23 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
       		['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent'],
       		['html', 'insertImage', 'insertLink']
   			];
-				
+
         $scope.create = function() {
 
-                var project = new Projects({
-                    name: this.name,
-                    description: this.description,
-                    documentation: this.documentation
-                });
+            var project = new Projects({
+                name: this.name,
+                description: this.description,
+                documentation: this.documentation
+            });
 
-                project.$save(function(response) {
-                    $location.path('projects/' + response._id);
-                    $scope.name = '';
-										$scope.description = '';
-										$scope.documentation = '';
-                }, function(errorResponse) {
-                    $scope.error = errorResponse.data.message;
-                });
+            project.$save(function(response) {
+                $location.path('projects/' + response._id);
+                $scope.name = '';
+                $scope.description = '';
+                $scope.documentation = '';
+            }, function(errorResponse) {
+                $scope.error = errorResponse.data.message;
+            });
         };
 
         $scope.remove = function(project) {
@@ -47,13 +47,13 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
         };
 
         $scope.update = function() {
-                var project = $scope.project;
+            var project = $scope.project;
 
-                project.$update(function() {
-                    $location.path('projects/' + project._id);
-                }, function(errorResponse) {
-                    $scope.error = errorResponse.data.message;
-                });
+            project.$update(function() {
+                $location.path('projects/' + project._id);
+            }, function(errorResponse) {
+                $scope.error = errorResponse.data.message;
+            });
         };
 
         $scope.find = function() {
