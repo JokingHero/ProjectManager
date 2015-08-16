@@ -1,21 +1,24 @@
 {
-    "name": "projectmanager",
-    "version": "0.0.1",
-    "description": "UXPin testing my patience :P",
-    "dependencies": {
-        "bootstrap": "~3",
-        "angular": "~1.3",
-        "angular-resource": "~1.3",
-        "angular-mocks": "~1.3",
-        "angular-cookies": "~1.3",
-        "angular-animate": "~1.3",
-        "angular-touch": "~1.3",
-        "angular-sanitize": "~1.3",
-        "angular-bootstrap": "~0.11.2",
-        "angular-ui-utils": "~0.1.1",
-        "angular-ui-router": "~0.2.11",
-        "font-awesome": "~4.4.0",
-        "textAngular": "~1.4.3",
-        "Autolinker.js": "~0.18.1"
-    }
+  "name": "projectmanager",
+  "version": "0.0.1",
+  "description": "UXPin testing my patience :P",
+  "dependencies": {
+    "bootstrap": "~3",
+    "angular": "~1.3",
+    "angular-resource": "~1.3",
+    "angular-mocks": "~1.3",
+    "angular-cookies": "~1.3",
+    "angular-animate": "~1.3",
+    "angular-touch": "~1.3",
+    "angular-sanitize": "~1.3",
+    "angular-ui-utils": "~0.1.1",
+    "angular-ui-router": "~0.2.11",
+    "font-awesome": "~4.4.0",
+    "textAngular": "~1.4.3",
+    "Autolinker.js": "~0.18.1",
+    "angular-bootstrap": "~0.13.3"
+  },
+  "resolutions": {
+    "angular-bootstrap": "~0.13.3"
+  }
 }
